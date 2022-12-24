@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Restaurant</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+	<nav class="navbar navbar-expand-md bg-info navbar-dark">
+
+  <!-- Brand -->
+       
+<!--<a class="navbar-brand" href="#">Home</a>-->
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <!-- <li class="nav-item">-->
+       <li class="nav-item"><a class="nav-link" th:href="@{/home}">Home</a></li>
+       <li class="nav-item"><a class="nav-link" th:href="@{/menuCard}">menuCard</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/contact}"> Contactus us</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/logout}">LogOut</a></li>
+    </ul>
+  </div>
+</nav>
+
+		
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr> 
+				
+					<th> RestaurantName</th>
+					<th>Rating</th>
+					<th>AverageCost</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+			
+			
+			<style>
+body {
+  background: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvMzEyLXRlZDkzNzktY2hpbS5qcGc.jpg?s=j5P-lh5g6Db1SOpdBjfKruUDhMU8q-PPMf-ed4LCTjg') no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+</style>
+			<tbody>
+ 					<tr th:each="restaurant : ${restaurantsList} ">
+					<td th:text="${restaurant.restaurantName}"></td>
+					<td th:text="${restaurant.rating}"></td>
+					<td th:text="${restaurant.averageCost}"></td>
+					
+					<td> 
+						<a th:href = "@{/delete/{id}(id = ${restaurant.restaurantId})}" onclick=" return confirm('Are you sure to delete')";
+						 class="btn btn-danger"> Delete</a>
+						 <a th:href = "@{/update/{id}(id = ${restaurant.restaurantId})}"
+						  class="btn btn-primary"> update</a>
+					</td>
+				</tr>
+				 
+				
+			</tbody>
+</table>
+	<div class="col-lg-3">
+				<a th:href="@{/createNewRestaurant}" class = "btn btn-primary btn-smmb-3">Add new
+					restaurant</a>
+			</div>
+</body>
+</html>
+				

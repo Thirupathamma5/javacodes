@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>REASAURANT</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+body {
+  background: url('https://media.istockphoto.com/id/509568543/photo/indian-food.jpg?b=1&s=170667a&w=0&k=20&c=6pyfySYOr4X2T1_zZ-XRa9wY15_1rVlfIDimXMPVVUE=') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size:Â cover;
+}
+</style>		
+</head>
+<body>
+<style>
+body {
+  background: url('https://img.freepik.com/premium-photo/concept-tasty-food-salad-with-red-orange-space-text_185193-80737.jpg?w=2000') no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+</style>
+<h1>Salads</h1>
+
+<form action="/action_page.php">
+  <label for="item">select Item:</label>
+  <select name="item" id="item">
+  <option value="item"></option>
+    <option value="green salad">green salad</option>
+    <option value="chicken salad">chicken salad</option>
+    <option value="fruit salad">fruit salad</option>
+    <option value="Broccoli salad">Broccoli salad</option>
+    <option value="classic greek salad">classic greek salad</option>
+    <option value="pasta salad">pasta salad</option>
+  </select>
+  <br><br>
+  <a th:href="@{/menuCard}" onclick="confirm('Your order is confirmed')"  class="btn btn-primary">Submit </a>
+  
+</form>
+</body>
+</html>
